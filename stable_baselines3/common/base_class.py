@@ -413,8 +413,8 @@ class BaseAlgorithm(ABC):
         :return: (int, Tuple[BaseCallback])
         """
         self.start_time = time.time()
-        self.ep_info_buffer = deque(maxlen=100)
-        self.ep_success_buffer = deque(maxlen=100)
+        self.ep_info_buffer = deque(maxlen=1000)
+        self.ep_success_buffer = deque(maxlen=1000)
 
         if self.action_noise is not None:
             self.action_noise.reset()
